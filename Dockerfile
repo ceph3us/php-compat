@@ -15,7 +15,7 @@ ENV PATH "$PATH:/root/.composer/vendor/bin/"
 RUN php composer.phar global require --prefer-stable "squizlabs/php_codesniffer=*"
 
 # download PHPCompatibility sniff
-RUN php composer.phar global require --prefer-stable "wimg/php-compatibility=*" \
+RUN php composer.phar global require --prefer-stable "wimg/php-compatibility=~8.1" \
   && phpcs --config-set installed_paths /root/.composer/vendor/wimg/php-compatibility
 
 ENV PHP_CHECK_MIN "7.0"
